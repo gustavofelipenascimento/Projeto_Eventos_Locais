@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
   },
   button: {
     marginTop: 12,
-    paddingBottom: 10,
   },
   error: {
     color: "red",
@@ -39,9 +38,25 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   modal: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 20,
     borderRadius: 10,
     margin: 20,
- }
+  },
+  item: {
+    backgroundColor: "#ffffff",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 10,
+    width: "90%",
+  },
+  errorText: {
+    color: "red",
+    fontSize: 16,
+  },
+  image: {
+    height: 259,
+    width: 259,
+  }
 });

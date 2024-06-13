@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Text } from "react-native";
+import { View,  ScrollView } from "react-native";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { styles } from "../config/style";
+import { Surface, TextInput, Button, Text} from "react-native-paper";
+import { Image } from "expo-image";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -19,22 +22,33 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View>
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
+    <ScrollView>
+      <Surface style={styles.container}>
+        <Image style={styles.image}
+        source={require('../img/logofoda.png')}/>
+        <Text style={styles.title}>Login</Text>
+        <View style={styles.innerContainer}>
+          <TextInput
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            style={styles.input}
+          />
 
-      <TextInput
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
+          <TextInput
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            style={styles.input}
+          />
 
-      <Button title="Login" onPress={handleLogin} />
-      <Button
-        title="Register"
-        onPress={() => navigation.navigate("Register")}
-      />
-      {error ? <Text>{error}</Text> : null}
-    </View>
+          <Button style={styles.button} onPress={handleLogin} mode="contained-tonal">Logar</Button>
+          <Button style={styles.button} onPress={() => navigation.navigate("Register")} mode="contained-tonal">Registrar</Button>
+          <Button style={styles.button} onPress={() => navigation.navigate("News")} mode="contained-tonal">Anônimo</Button>
+          {error ? <Text style={styles.error}>{error}</Text> : null}
+        </View>
+      </Surface>
+    </ScrollView>
   );
 }
