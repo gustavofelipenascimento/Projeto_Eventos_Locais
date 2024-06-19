@@ -13,6 +13,7 @@ import {
   } from "../config/theme";
   import { useTheme } from "../contexts/ThemeContexts";
   import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import LocationScreen from "../screens/LocationScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,9 @@ export default function AppNavigator() {
          name="Home"
          component={TabsNavigation}
          />
+         <Stack.Screen 
+         name="Location"
+         component={LocationScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

@@ -46,6 +46,7 @@ export default function LoginScreen({ navigation }) {
           <Button style={styles.button} onPress={handleLogin} mode="contained-tonal">Logar</Button>
           <Button style={styles.button} onPress={() => navigation.navigate("Register")} mode="contained-tonal">Registrar</Button>
           <Button style={styles.button} onPress={() => navigation.navigate("News")} mode="contained-tonal">Anônimo</Button>
+          <Button style={styles.button} onPress={() => navigation.navigate("Location")} mode="contained-tonal">Localização</Button>
           {error ? <Text style={styles.error}>{error}</Text> : null}
         </View>
       </Surface>
